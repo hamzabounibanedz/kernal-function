@@ -10,7 +10,7 @@ LogExponentialKernel::LogExponentialKernel(double q) : m_q(std::max(1.0, q)) {}
 double LogExponentialKernel::psi(double t) const {
   validateInput(t, "psi");
 
-  // FORMULA: ψ(t) = (t²-1)/2 − (1/2)·ln(t) + (e^{1/t^q-1} − 1)/(2q)
+  // FORMULA (paper-exact): ψ(t) = (t²−1)/2 − (1/2)·ln(t) + (e^{1/t^q−1} − 1)/(2q)
   // Term 1: quadratic barrier (t²-1)/2
   double term1 = (t * t - 1.0) / 2.0;
   // Term 2: logarithmic barrier −(1/2)·ln(t)
@@ -25,7 +25,7 @@ double LogExponentialKernel::psi(double t) const {
 double LogExponentialKernel::psi_prime(double t) const {
   validateInput(t, "psi_prime");
 
-  // DERIVATIVE: ψ'(t) = t − 1/(2t) − e^{1/t^q-1}/(2·t^{q+1})
+  // DERIVATIVE (paper-exact): ψ'(t) = t − 1/(2t) − e^{1/t^q−1}/(2·t^{q+1})
   double term1 = t;            // derivative of (t²-1)/2
   double term2 = -0.5 / t;     // derivative of −(1/2)·ln(t)
   // Exponential derivative part: (1/(2q))·e^{...}·(−q·t^{−(q+1)})
@@ -38,7 +38,7 @@ double LogExponentialKernel::psi_prime(double t) const {
 double LogExponentialKernel::psi_double_prime(double t) const {
   validateInput(t, "psi_double_prime");
 
-  // DERIVATIVE: ψ''(t) = 1 + 1/(2t²) + (1/(2q))·e^{1/t^q-1}·[q(q+1)·t^{−(q+2)} + q²·t^{−(2q+2)}]
+  // DERIVATIVE (paper-exact): ψ''(t) = 1 + 1/(2t²) + (1/(2q))·e^{1/t^q−1}·[q(q+1)·t^{−(q+2)} + q²·t^{−(2q+2)}]
   double term1 = 1.0 + 1.0 / (2.0 * t * t);
   double exp_term_val = std::exp(1.0 / std::pow(t, m_q) - 1.0);
   double first_deriv_exp = -m_q / std::pow(t, m_q + 1.0);
@@ -50,7 +50,7 @@ double LogExponentialKernel::psi_double_prime(double t) const {
 double LogExponentialKernel::psi_triple_prime(double t) const {
   validateInput(t, "psi_triple_prime");
 
-  // DERIVATIVE: ψ'''(t) = −1/t³ + (1/(2q))·d³/dt³[e^{1/t^q-1}]
+  // DERIVATIVE (paper-exact): ψ'''(t) = −1/t³ + (1/(2q))·d³/dt³[e^{1/t^q−1}]
   double term1 = -1.0 / (t * t * t);
   // Use numerical differentiation for third derivative of exponential term
   double h = std::max(1e-6, t * 1e-4);

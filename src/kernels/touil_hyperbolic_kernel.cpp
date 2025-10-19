@@ -5,7 +5,7 @@
 static inline double coth(double x) { return std::cosh(x) / std::sinh(x); }
 static inline double csch(double x) { return 1.0 / std::sinh(x); }
 
-// (no file-scope constants needed)
+// Notes: coth(x)=cosh(x)/sinh(x), csch(x)=1/sinh(x). Domain t>0.
 
 double TouilHyperbolicKernel::psi(double t) const {
   validateInput(t, "TouilHyperbolicKernel::psi");

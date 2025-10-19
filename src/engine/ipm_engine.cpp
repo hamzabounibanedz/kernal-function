@@ -1,3 +1,12 @@
+// IpmEngine: Numerical core for PD‑IPM SDO solves
+// Responsibilities:
+// - NT scaling and Newton system construction/solve
+// - Proximity Ψ(V)=tr(ψ(V)) evaluation and backtracking line search
+// - SPD stabilization via projection where needed
+// - Iteration accounting (outer L, inner K_total, K_avg) and timing
+// Notes:
+// - Formulas in kernel calls match the cited papers; domains validated
+// - Thread CPU time on Windows via GetThreadTimes; std::clock elsewhere
 #include "ipm_engine.h"
 #include <algorithm>
 #include <chrono>

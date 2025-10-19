@@ -11,7 +11,7 @@ ParameterizedLogKernel::ParameterizedLogKernel(double q)
 double ParameterizedLogKernel::psi(double t) const {
   validateInput(t, "psi");
 
-  // FORMULA: ψ(t) = (t²-1)/2 - (1/2)·ln(t) + (e^{1/t^q-1} - 1)/(2q)
+  // FORMULA (paper-exact): ψ(t) = (t²-1)/2 − (1/2)·ln(t) + (e^{1/t^q−1} − 1)/(2q)
   // Term 1: quadratic barrier (t²-1)/2
   double term1 = (t * t - 1.0) / 2.0;
   // Term 2: logarithmic barrier −(1/2)·ln(t)
@@ -25,7 +25,7 @@ double ParameterizedLogKernel::psi(double t) const {
 double ParameterizedLogKernel::psi_prime(double t) const {
   validateInput(t, "psi_prime");
 
-  // DERIVATIVE: ψ'(t) = t − 1/(2t) − e^{1/t^q-1}/(2·t^{q+1})
+  // DERIVATIVE (paper-exact): ψ'(t) = t − 1/(2t) − e^{1/t^q−1}/(2·t^{q+1})
   // Term 1: derivative of (t²-1)/2 → t
   // Term 2: derivative of −(1/2)·ln(t) → −1/(2t)
   double term1 = t;
@@ -39,7 +39,7 @@ double ParameterizedLogKernel::psi_prime(double t) const {
 double ParameterizedLogKernel::psi_double_prime(double t) const {
   validateInput(t, "psi_double_prime");
 
-  // DERIVATIVE: ψ''(t) = 1 + 1/(2t²) + (1/(2q))·e^{1/t^q-1}·[q(q+1)·t^{−(q+2)} + q²·t^{−(2q+2)}]
+  // DERIVATIVE (paper-exact): ψ''(t) = 1 + 1/(2t²) + (1/(2q))·e^{1/t^q−1}·[q(q+1)·t^{−(q+2)} + q²·t^{−(2q+2)}]
   // Term 1: derivative of t → 1
   // Term 2: derivative of −1/(2t) → +1/(2t²)
   double term1 = 1.0 + 1.0 / (2.0 * t * t);
@@ -52,7 +52,7 @@ double ParameterizedLogKernel::psi_double_prime(double t) const {
 double ParameterizedLogKernel::psi_triple_prime(double t) const {
   validateInput(t, "psi_triple_prime");
 
-  // DERIVATIVE: ψ'''(t) = −1/t³ + (1/(2q))·d³/dt³[e^{1/t^q-1}]
+  // DERIVATIVE (paper-exact): ψ'''(t) = −1/t³ + (1/(2q))·d³/dt³[e^{1/t^q−1}]
   // Term 1: derivative of 1/(2t²) → −1/t³
   double term1 = -1.0 / (t * t * t);
   // Term 2: exact third derivative of exponential component
