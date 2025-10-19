@@ -1,0 +1,10 @@
+^C:\USERS\USER\DESKTOP\KERNAL-FUNCTION\BUILD\CMAKEFILES\2E90262B11D96A40BF9A724D39CD9F93\GENERATE.STAMP.RULE
+setlocal
+C:\msys64\mingw64\bin\cmake.exe -SC:/Users/User/Desktop/kernal-function -BC:/Users/User/Desktop/kernal-function/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/User/Desktop/kernal-function/build/KernelFunction.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

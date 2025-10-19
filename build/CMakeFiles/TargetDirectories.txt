@@ -1,0 +1,5 @@
+C:/Users/User/Desktop/kernal-function/build/CMakeFiles/kernel_ui.dir
+C:/Users/User/Desktop/kernal-function/build/CMakeFiles/kernel_console.dir
+C:/Users/User/Desktop/kernal-function/build/CMakeFiles/INSTALL.dir
+C:/Users/User/Desktop/kernal-function/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/User/Desktop/kernal-function/build/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/qss">
+    <file>qss/app_theme.qss</file>
+    <file>qss/app_theme_high_contrast.qss</file>
+  </qresource>
+  <qresource prefix="/icons">
+    <!-- Place SVG icons in resources/icons and list them here if embedding later -->
+  </qresource>
+</RCC>
+
+
+
+

@@ -1,0 +1,6 @@
+set(__QT_DEPLOY_TARGET_kernel_ui_FILE C:/Users/User/Desktop/kernal-function/build_run/Release/kernel_ui.exe)
+set(__QT_DEPLOY_TARGET_kernel_ui_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_kernel_ui_RUNTIME_DLLS C:/Users/User/Desktop/kernal-function/.qt-runtime/6.7.3/msvc2019_64/bin/Qt6Concurrent.dll;C:/Users/User/Desktop/kernal-function/.qt-runtime/6.7.3/msvc2019_64/bin/Qt6Charts.dll;C:/Users/User/Desktop/kernal-function/.qt-runtime/6.7.3/msvc2019_64/bin/Qt6OpenGLWidgets.dll;C:/Users/User/Desktop/kernal-function/.qt-runtime/6.7.3/msvc2019_64/bin/Qt6Widgets.dll;C:/Users/User/Desktop/kernal-function/.qt-runtime/6.7.3/msvc2019_64/bin/Qt6OpenGL.dll;C:/Users/User/Desktop/kernal-function/.qt-runtime/6.7.3/msvc2019_64/bin/Qt6Gui.dll;C:/Users/User/Desktop/kernal-function/.qt-runtime/6.7.3/msvc2019_64/bin/Qt6Core.dll)
+set(__QT_DEPLOY_TARGET_kernel_console_FILE C:/Users/User/Desktop/kernal-function/build_run/Release/kernel_console.exe)
+set(__QT_DEPLOY_TARGET_kernel_console_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_kernel_console_RUNTIME_DLLS )

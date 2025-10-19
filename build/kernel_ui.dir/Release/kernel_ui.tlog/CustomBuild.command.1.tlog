@@ -1,0 +1,24 @@
+^C:\USERS\USER\DESKTOP\KERNAL-FUNCTION\BUILD\CMAKEFILES\7AB840EEA2FAEEC08B899225BC1E681E\QRC_APP_RESOURCES.CPP.RULE
+setlocal
+cd C:\Users\User\Desktop\kernal-function\build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\msys64\mingw64\bin\cmake.exe -E cmake_autorcc C:/Users/User/Desktop/kernal-function/build/CMakeFiles/kernel_ui_autogen.dir/AutoRcc_app_resources_3YJK5W5UP7_Info.json Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\USER\DESKTOP\KERNAL-FUNCTION\CMAKELISTS.TXT
+setlocal
+C:\msys64\mingw64\bin\cmake.exe -SC:/Users/User/Desktop/kernal-function -BC:/Users/User/Desktop/kernal-function/build --check-stamp-file C:/Users/User/Desktop/kernal-function/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
