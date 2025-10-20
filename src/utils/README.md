@@ -1,7 +1,22 @@
 # utils/
 
-Utilities and fixtures.
+## About
 
-- test_data.\*: provides paper test cases and helper generators for SDO problems.
+Utilities and fixtures supporting algorithms and UI.
 
-Extend by adding new named test cases or data loaders.
+## Contents
+
+- `test_data.*` – paper test cases and helpers for SDO problems
+
+## Responsibilities
+
+- Provide named test cases with valid dimensions and initial points
+- Keep numerical values finite and reasonable for demos
+
+## Conventions
+
+- Use clear names; prefer deterministic examples
+
+## Extending
+
+- Add new test sets; document expected sizes and notes

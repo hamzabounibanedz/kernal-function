@@ -1,16 +1,10 @@
 # kernels/
 
-Kernel (barrier) families used in PD‑IPM.
+## About
 
-Each kernel implements:
+Kernel (barrier) families used by PD‑IPM. Each kernel matches paper‑exact formulas and derivatives, with domain/parameter validation.
 
-- psi(t) (ψ)
-- psi_prime(t) (ψ′)
-- psi_double_prime(t) (ψ″)
-- psi_triple_prime(t) (ψ‴, exact or numerical)
-- getName(), getFormula(), parameter accessors, and validation.
-
-Implemented:
+## Contents
 
 - Trigonometric
 - Exponential‑Parametric
@@ -22,4 +16,18 @@ Implemented:
 - Wu‑Zhang (hyperbolic)
 - IJNAA 2023 (fractional)
 
-All formulas/derivatives match the papers; domains/parameters validated.
+## Responsibilities
+
+- Provide `psi`, `psi_prime`, `psi_double_prime`, `psi_triple_prime`
+- Expose `getName`, `getFormula`, `getParameters`, `setParameters`
+- Enforce domains/parameter ranges (e.g., t>1, q≥1, 0≤m≤1)
+
+## Conventions
+
+- Use clear math in code; keep comments to record formulas and rationales
+- Prefer exact derivatives when feasible; justify numerical fallbacks
+
+## Extending
+
+- Add new kernel files and register in `ui/kernel_manager.*`
+- Include paper citation, domain, and parameter checks

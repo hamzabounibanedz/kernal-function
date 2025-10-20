@@ -1,17 +1,29 @@
 # gui/
 
-Qt Widgets UI.
+## About
 
-Components:
+Qt Widgets UI for configuring runs, visualizing results, and exporting data.
 
-- mainwindow.\*: top‑level window, layout, run controls, results tabs
-- cpu_time_chart_widget.\*: per‑kernel CPU time chart (QtCharts)
-- algorithm_dialog.\*: algorithm/kernel details dialog
-- matrix_input_widget.\*: matrix/problem editor and loaders
-- simple_chart_widget.\*, chart widgets: auxiliary visualizations (if present)
+## Contents
 
-Usage:
+- `mainwindow.*` – layout, run controls, results tabs
+- `cpu_time_chart_widget.*` – per‑kernel CPU time chart (QtCharts)
+- `algorithm_dialog.*` – algorithm/kernel details
+- `matrix_input_widget.*` – matrix/problem editor
+- Other small chart/widgets as present
 
-- Load QSS at startup (see main.cpp)
-- Use parameter editor and lists to configure runs
-- Results table/log and chart update after each run
+## Responsibilities
+
+- Present kernels/tests and parameter controls
+- Show results table, execution log, and charts
+- Export results (CSV/PDF/PNG where available)
+
+## Conventions
+
+- Style via QSS (60‑30‑10 palette)
+- Keep UI responsive; update on run completion
+
+## Extending
+
+- Add tabs/visualizations as separate widgets
+- Wire new controls to `mainwindow` signals/slots
